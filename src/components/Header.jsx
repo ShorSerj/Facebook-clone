@@ -19,8 +19,7 @@ const Header= () => {
                 </svg>
             </div>
             <div className="avatar">
-                <img src="https://www.figma.com/file/loVIwkHO3saWIhiga6WZAO/FacebookRedesignConceptbyMujtaba?node-id=45%3A112" alt="" />
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione asperiores rem corporis ut suscipit atque in, ullam dolorum eius cumque, sint quod, laudantium quae dignissimos. Totam quia natus veniam fuga!
+                <img src="https://storage.yandexcloud.net/printio/assets/realistic_views/round_mouse_pad/detailed/f8d40c9761e7e901d8f9accdbaa376432148d827.jpg?1547712687" alt="" />
             </div>
       </header>
     )
