@@ -7,11 +7,11 @@ const Discussion = () => {
                         <img src="https://carline25.ru/assets/images/background/no_avatar.png" alt="Jessica_photo" />
                         <img src="https://carline25.ru/assets/images/background/no_avatar.png" alt="Jessica_photo" />
                     </div>
-                    <h3>Jessica’s Wedding Plan</h3>
-                    <span>Active Now</span>
-                    <div className="">
-                        <button>Call Group</button>
-                        <button>Video Call</button>
+                    <h3 className="discussion__title">Jessica’s Wedding Plan</h3>
+                    <span className="discussion__status">Active Now</span>
+                    <div className="discussion__buttons">
+                        <button className="discussion__button discussion__button_margin_10px">Call Group</button>
+                        <button className="discussion__button">Video Call</button>
                     </div>
                 </div>
             </div>
