@@ -1,0 +1,22 @@
+  .discussion__button {
+    width: 102px;
+    height: 31px;
+    background: #F0F7FF;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .discussion__button_margin_10px {
+    margin-right: 10px;
+  }
+  
+  .discussion__button_title {
+    margin-left: 5px;
+  }
+  
+  .call__svg {
+    position: relative;
+    top: 2px;
+  }

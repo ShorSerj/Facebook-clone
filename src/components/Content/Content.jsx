@@ -1,7 +1,8 @@
-import Community from './Community';
+import Community from './Community/Community';
+import News from './News/News';
+import Social from './Social/Social';
+
 import s from './Content.module.css'
-import News from './News';
-import Social from './Social';
 
 const Content = () => {
     return (

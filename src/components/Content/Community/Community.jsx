@@ -1,5 +1,5 @@
-import Discussion from './Discussion';
-import OnlineContacts from './OnlineContacts';
+import Discussion from './Discussion/Discussion';
+import OnlineContacts from './OnlineContacts/OnlineContacts';
 
 const Community = () => {
     return (

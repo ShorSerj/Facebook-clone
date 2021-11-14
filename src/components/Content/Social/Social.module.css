@@ -1,0 +1,10 @@
+.stories {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 15px;
+}
+
+.social__wrapper {
+  margin-left: 29px;
+}
