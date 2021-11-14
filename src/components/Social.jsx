@@ -1,34 +1,36 @@
+import s from './Social.module.css'
+
 const Social = ()=>{
     return (
-        <section className="social-wrapper">
-            <header className="stories-title">
+        <section className={s.social__wrapper}>
+            <header className={s.social__title}>
                 <h2>Stories</h2>
             </header>
-            <article className="stories">
-                <div className="friends-storie">
-                    <div className="author-wrapper">
-                        <figure className="author-avatar">
-                            <img className="avatar-user" src="https://static.tildacdn.com/tild3662-3765-4431-b934-393761356233/71317324_17535198697.png"
+            <article className={s.stories}>
+                <div className={s.friends__storie}>
+                    <div className={s.author__wrapper}>
+                        <figure className={s.author__avatar}>
+                            <img className={s.avatar__user} src="https://static.tildacdn.com/tild3662-3765-4431-b934-393761356233/71317324_17535198697.png"
                             alt="Elephant at sunset"/>
-                            <figcaption className="user-name">Alice Kramer</figcaption>
+                            <figcaption className={s.user__name}>Alice Kramer</figcaption>
                         </figure>
                     </div>
                 </div>
-                <div className="friends-storie">
-                    <div className="author-wrapper">
-                        <figure className="author-avatar">
-                            <img className="avatar-user" src="https://static.tildacdn.com/tild3662-3765-4431-b934-393761356233/71317324_17535198697.png"
+                <div className={s.friends__storie}>
+                    <div className={s.author__wrapper}>
+                        <figure className={s.author__avatar}>
+                            <img className={s.avatar__user} src="https://static.tildacdn.com/tild3662-3765-4431-b934-393761356233/71317324_17535198697.png"
                             alt="Elephant at sunset"/>
-                            <figcaption className="user-name">Alice Kramer</figcaption>
+                            <figcaption className={s.user__name}>Alice Kramer</figcaption>
                         </figure>
                     </div>
                 </div>
-                <div className="friends-storie">
-                    <div className="author-wrapper">
-                        <figure className="author-avatar">
-                            <img className="avatar-user" src="https://static.tildacdn.com/tild3662-3765-4431-b934-393761356233/71317324_17535198697.png"
+                <div className={s.friends__storie}>
+                    <div className={s.author__wrapper}>
+                        <figure className={s.author__avatar}>
+                            <img className={s.avatar__user} src="https://static.tildacdn.com/tild3662-3765-4431-b934-393761356233/71317324_17535198697.png"
                             alt="Elephant at sunset"/>
-                            <figcaption className="user-name">Alice Kramer</figcaption>
+                            <figcaption className={s.user__name}>Alice Kramer</figcaption>
                         </figure>
                     </div>
                 </div>
