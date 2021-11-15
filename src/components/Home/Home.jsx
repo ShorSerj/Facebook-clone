@@ -2,9 +2,9 @@ import Community from './Community/Community';
 import News from './News/News';
 import Social from './Social/Social';
 
-import s from './Content.module.css'
+import s from './Home.module.css'
 
-const Content = () => {
+const Home = () => {
     return (
         <div className={s.content_wrapper}>
             <Community/>
@@ -13,4 +13,4 @@ const Content = () => {
         </div>
     )
 }
-export default Content;
+export default Home;

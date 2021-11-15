@@ -5,25 +5,25 @@ const Header = () => {
     <header className={s.header}>
       <ul className={s.links}>
         <li>
-          <a>Home</a>
+          <a href='/'>Home</a>
         </li>
         <li>
-          <a>Notification</a>
+          <a href='/notification'>Notification</a>
         </li>
         <li>
-          <a>Watch</a>
+          <a href='/watch'>Watch</a>
         </li>
         <li>
-          <a>Marketplace</a>
+          <a href='/marketplace'>Marketplace</a>
         </li>
         <li>
-          <a>Groups</a>
+          <a href='/groups'>Groups</a>
         </li>
         <li>
-          <a>Messenger</a>
+          <a href='/messenger'>Messenger</a>
         </li>
         <li>
-          <a>Live</a>
+          <a href='/live'>Live</a>
         </li>
       </ul>
       <div className={s.search}>
@@ -50,3 +50,6 @@ const Header = () => {
   )
 }
 export default Header
+
+
+//TODO search and avatar need transfer to components

@@ -1,7 +1,7 @@
 .header {
     grid-area: header;
     background-color: white;
-    height: 70px;
+    height: 13vh;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     align-content: center;

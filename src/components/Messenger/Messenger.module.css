@@ -1,0 +1,42 @@
+.messenger__wrapper {
+    background-color: #F2E5AC;
+    grid-area: content;
+    padding-left: 106px;
+    padding-top: 35px;
+}
+
+.chatbar {
+
+}
+
+.serach input {
+    width: 427px;
+    height: 57px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+}
+
+.groups_wrapper {
+    margin-top: 45px;
+    width: 427px;
+    height: 347px;
+    background: #FFFFFF;
+    border-radius: 20px;
+    padding: 13px 27px 11px 20px;
+}
+.groups{
+    margin-top: 17px;
+}
+.groups__item{
+    display: flex;
+}
+.avatar_contact{
+    width: 70px;
+    height: 70px;
+    border-radius: 35px;
+    object-fit: cover;
+}
+.contact_name{
+    margin: 8px 14px;
+}
