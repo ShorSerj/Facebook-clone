@@ -1,0 +1,44 @@
+.chat {
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    width: 100%;
+    margin-left: 26px;
+}
+
+.chat__title {
+    display: flex;
+    justify-content: center;
+}
+
+.contact {
+    display: flex;
+    width: 80%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+    margin-top: 24px;
+    padding-bottom: 24px;
+}
+
+.contact__avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 35px;
+    object-fit: cover;
+}
+
+.contact_text {
+    margin: 8px 14px;
+}
+
+.contact__name {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
+    color: #000000;
+}
+
+.contact__status {
+    font-size: 14px;
+    line-height: 21px;
+    color: rgba(0, 0, 0, 0.85);
+}
