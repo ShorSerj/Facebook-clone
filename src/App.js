@@ -19,7 +19,7 @@ const App = () => {
                 <Navbar/>
                 <Routes>
                     <Route path='/' element={<Home/>} />
-                    <Route path='/messenger' element={<Messenger/>} />
+                    <Route path="/messenger/*" element={<Messenger/>} />
                 </Routes>
             </div>
         </BrowserRouter>
