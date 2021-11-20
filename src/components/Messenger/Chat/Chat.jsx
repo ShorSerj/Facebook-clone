@@ -4,6 +4,7 @@ import Message_user from "./Message_user/Message_user";
 import Interlocutor from "./Interlocutor/Interlocutor";
 
 const Chat = (props) => {
+
     return (
         <div className={s.chat}>
             <header className={s.chat__title}>
