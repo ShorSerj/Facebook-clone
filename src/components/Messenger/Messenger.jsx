@@ -1,7 +1,6 @@
 import s from './Messenger.module.css'
 import Contact from "./Contact/Contact";
 import Chat from "./Chat/Chat";
-import {NavLink} from "react-router-dom";
 
 const Messenger = () => {
     return (
