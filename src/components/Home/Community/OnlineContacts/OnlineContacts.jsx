@@ -1,29 +1,8 @@
 import Friend from './friend/Friend'
 import s from './OnlineContacts.module.css'
 
-const OnlineContacts = () => {
-
-    let onlineContactsData = [
-        {
-            id: 1,
-            avatar: "https://img2.freepng.ru/20180412/ehw/kisspng-photography-circle-drawing-mood-frame-5ad018a69b6676.1880375815235872386365.jpg",
-            name: 'Cierra Vega'
-        },
-        {
-            id: 2,
-            avatar: "https://avatars.mds.yandex.net/i?id=f3e17a19823f85f3501629fd55748b35-4841525-images-thumbs&n=13",
-            name: "Alden Cantrell"
-        },
-        {id: 3, avatar: "https://cdn.pixabay.com/photo/2018/07/08/21/35/human-3524862_1280.jpg", name: "Kierra Gentry"},
-        {
-            id: 4,
-            avatar: "https://cdn.pixabay.com/photo/2017/04/04/17/55/people-2202472_1280.jpg",
-            name: "Bradyn Kramer"
-        },
-        {id: 5, avatar: "http://www.weareart.ru/public/uploads/news/967/b-IMG_2128edfef1b9.jpg", name: "Thomas Crane"},
-
-    ]
-    let friendsVisibility= onlineContactsData.map(f => <Friend avatar={f.avatar} name={f.name}/>)
+const OnlineContacts = (props) => {
+    let friendsVisibility= props.onlineContactsData.map(f => <Friend avatar={f.avatar} name={f.name}/>)
 
     return (
         <div className={s.onlineContacts__container}>

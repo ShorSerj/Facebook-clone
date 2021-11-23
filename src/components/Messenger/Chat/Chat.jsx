@@ -2,8 +2,17 @@ import s from './Chat.module.css'
 import Message_interlocutor from "./Message_interlocutor/Message_interlocutor";
 import Message_user from "./Message_user/Message_user";
 import Interlocutor from "./Interlocutor/Interlocutor";
+import React from "react";
 
 const Chat = (props) => {
+    let newMessage = React.createRef();
+    let submitMessage = () => {
+        let text = newMessage.current.value
+        props.addMessageUser(text)
+    }
+
+    let messageInterlocutorView = props.messages.messageInterlocutorData.map(m => <Message_interlocutor text={m.text} time={m.time}/>)
+    let messageUserView = props.messages.messageUserData.map(m => <Message_user text={m.text} time={m.time}/>)
 
     return (
         <div className={s.chat}>
@@ -11,13 +20,14 @@ const Chat = (props) => {
                 <Interlocutor img={props.img} name={props.name} status={props.status}/>
             </header>
             <div className={s.messages}>
-                <Message_interlocutor text='Hey There !' time='Today, 2:01pm'/>
-                <Message_user text='Hey!' time='Today, 8:22pm'/>
+                {messageInterlocutorView}
+                {messageUserView}
             </div>
             <footer className={s.chat__footer}>
                 <div className={s.inputs__container}>
                     <div className="">
-                        <input className={s.input__typing} type="text"/>
+                        <input className={s.input__typing} type="text" ref={newMessage}/>
+                        {/*TODO need add buttoms for increase input block */}
                         {/*<div className="">*/}
                         {/*    <svg width="14" height="13" viewBox="0 0 14 13" fill="none"*/}
                         {/*         xmlns="http://www.w3.org/2000/svg">*/}
@@ -27,14 +37,20 @@ const Chat = (props) => {
                         {/*    </svg>*/}
                         {/*</div>*/}
                     </div>
-                    <button className={s.input__audiotext}>
-                        <svg width="15" height="23" viewBox="0 0 15 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <button className={s.input__audiotext} onClick={submitMessage}>
+                        {/*TODO need change svg when in input__typing have some text */}
+                        {/*<svg width="15" height="23" viewBox="0 0 15 23" fill="none" xmlns="http://www.w3.org/2000/svg">*/}
+                        {/*    <path*/}
+                        {/*        d="M12.9688 9.9375V12.2812C12.9688 13.7317 12.3926 15.1227 11.367 16.1482C10.3414 17.1738 8.9504 17.75 7.5 17.75C6.0496 17.75 4.6586 17.1738 3.63301 16.1482C2.60742 15.1227 2.03125 13.7317 2.03125 12.2812V9.9375H0.46875V12.2812C0.469571 14.0102 1.10739 15.6782 2.26033 16.9667C3.41327 18.2551 5.0005 19.0735 6.71875 19.2656V20.875H3.59375V22.4375H11.4062V20.875H8.28125V19.2656C9.9995 19.0735 11.5867 18.2551 12.7397 16.9667C13.8926 15.6782 14.5304 14.0102 14.5312 12.2812V9.9375H12.9688Z"*/}
+                        {/*        fill="white"/>*/}
+                        {/*    <path*/}
+                        {/*        d="M7.5 16.1875C8.536 16.1875 9.52957 15.7759 10.2621 15.0434C10.9947 14.3108 11.4062 13.3173 11.4062 12.2812V4.46875C11.4062 3.43275 10.9947 2.43918 10.2621 1.70661C9.52957 0.97405 8.536 0.5625 7.5 0.5625C6.464 0.5625 5.47043 0.97405 4.73786 1.70661C4.0053 2.43918 3.59375 3.43275 3.59375 4.46875V12.2812C3.59375 13.3173 4.0053 14.3108 4.73786 15.0434C5.47043 15.7759 6.464 16.1875 7.5 16.1875Z"*/}
+                        {/*        fill="white"/>*/}
+                        {/*</svg>*/}
+                        <svg className="crt8y2ji" width="20px" height="20px" viewBox="0 0 24 24">
                             <path
-                                d="M12.9688 9.9375V12.2812C12.9688 13.7317 12.3926 15.1227 11.367 16.1482C10.3414 17.1738 8.9504 17.75 7.5 17.75C6.0496 17.75 4.6586 17.1738 3.63301 16.1482C2.60742 15.1227 2.03125 13.7317 2.03125 12.2812V9.9375H0.46875V12.2812C0.469571 14.0102 1.10739 15.6782 2.26033 16.9667C3.41327 18.2551 5.0005 19.0735 6.71875 19.2656V20.875H3.59375V22.4375H11.4062V20.875H8.28125V19.2656C9.9995 19.0735 11.5867 18.2551 12.7397 16.9667C13.8926 15.6782 14.5304 14.0102 14.5312 12.2812V9.9375H12.9688Z"
-                                fill="white"/>
-                            <path
-                                d="M7.5 16.1875C8.536 16.1875 9.52957 15.7759 10.2621 15.0434C10.9947 14.3108 11.4062 13.3173 11.4062 12.2812V4.46875C11.4062 3.43275 10.9947 2.43918 10.2621 1.70661C9.52957 0.97405 8.536 0.5625 7.5 0.5625C6.464 0.5625 5.47043 0.97405 4.73786 1.70661C4.0053 2.43918 3.59375 3.43275 3.59375 4.46875V12.2812C3.59375 13.3173 4.0053 14.3108 4.73786 15.0434C5.47043 15.7759 6.464 16.1875 7.5 16.1875Z"
-                                fill="white"/>
+                                d="M16.6915026,12.4744748 L3.50612381,13.2599618 C3.19218622,13.2599618 3.03521743,13.4170592 3.03521743,13.5741566 L1.15159189,20.0151496 C0.8376543,20.8006365 0.99,21.89 1.77946707,22.52 C2.41,22.99 3.50612381,23.1 4.13399899,22.8429026 L21.714504,14.0454487 C22.6563168,13.5741566 23.1272231,12.6315722 22.9702544,11.6889879 C22.8132856,11.0605983 22.3423792,10.4322088 21.714504,10.118014 L4.13399899,1.16346272 C3.34915502,0.9 2.40734225,1.00636533 1.77946707,1.4776575 C0.994623095,2.10604706 0.8376543,3.0486314 1.15159189,3.99121575 L3.03521743,10.4322088 C3.03521743,10.5893061 3.34915502,10.7464035 3.50612381,10.7464035 L16.6915026,11.5318905 C16.6915026,11.5318905 17.1624089,11.5318905 17.1624089,12.0031827 C17.1624089,12.4744748 16.6915026,12.4744748 16.6915026,12.4744748 Z"
+                                fill="#FFFFFF" fill-rule="evenodd" stroke="none"></path>
                         </svg>
                     </button>
                 </div>

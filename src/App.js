@@ -11,15 +11,15 @@ import Messenger from "./components/Messenger/Messenger";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 
 
-const App = () => {
+const App = (props) => {
     return (
         <BrowserRouter>
             <div className='app_wrapper'>
                 <Header/>
                 <Navbar/>
                 <Routes>
-                    <Route path='/' element={<Home/>} />
-                    <Route path="/messenger/*" element={<Messenger/>} />
+                    <Route path='/' element={<Home homePages={props.state.homePages} />} />
+                    <Route path="/messenger/*" element={<Messenger messengerPages={props.state.messengerPages} addMessageUser={props.addMessageUser}/>} />
                 </Routes>
             </div>
         </BrowserRouter>

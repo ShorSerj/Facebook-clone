@@ -43,9 +43,9 @@ const Post = (props) => {
         </div>
         <footer className={s.post__reviews}>
           <div className={s.reviews__container}>
-            <Like value="12" />
-            <Comments value="7" />
-            <Share value="1" />
+           <Like value="12" />   {/*//TODO change to Redux*/}
+            <Comments value="7" />  {/*//TODO change to Redux*/}
+            <Share value="1" />  {/*//TODO change to Redux*/}
           </div>
         </footer>
       </div>

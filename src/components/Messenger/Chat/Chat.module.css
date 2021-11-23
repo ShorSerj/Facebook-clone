@@ -45,4 +45,8 @@
     background: #1A66FF;
     border-radius: 10px;
     margin-left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }

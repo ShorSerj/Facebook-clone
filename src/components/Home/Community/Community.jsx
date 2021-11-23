@@ -1,11 +1,11 @@
 import Discussion from './Discussion/Discussion';
 import OnlineContacts from './OnlineContacts/OnlineContacts';
 
-const Community = () => {
+const Community = (props) => {
     return (
         <div className="community-wrapper">
-            <Discussion/>
-            <OnlineContacts/>
+            <Discussion discussionData={props.communityBlock.discussionData}/>
+            <OnlineContacts onlineContactsData={props.communityBlock.onlineContactsData}/>
         </div>
     )
 }
