@@ -93,15 +93,15 @@ const Navbar = () => {
                 <li>
                     <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g opacity="0.8" filter="url(#filter0_d_45:2)">
-                            <circle cx="29" cy="27" r="23.25" stroke="white" stroke-width="1.5"/>
-                        </g>
+                            <circle cx="29" cy="27" r="23.25" stroke="white" strokeWidth="1.5"/>
+                        </g>F
                         <circle cx="29" cy="27" r="23.0769" fill="#F0F7FF"/>
-                        <path d="M29 36.3555L29 17.6445" stroke="#1877F2" stroke-width="2.5"/>
-                        <path d="M19.6445 27L38.3555 27" stroke="#1877F2" stroke-width="2.5"/>
+                        <path d="M29 36.3555L29 17.6445" stroke="#1877F2" strokeWidth="2.5"/>
+                        <path d="M19.6445 27L38.3555 27" stroke="#1877F2" strokeWidth="2.5"/>
                         <defs>
                             <filter id="filter0_d_45:2" x="0" y="0" width="56" height="56" filterUnits="userSpaceOnUse"
-                                    color-interpolation-filters="sRGB">
-                                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                    colorInterpolationFilters="sRGB">
+                                <feFlood floodOpacity="0" result="BackgroundImageFix"/>
                                 <feColorMatrix in="SourceAlpha" type="matrix"
                                                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
                                 <feOffset dx="-1" dy="1"/>

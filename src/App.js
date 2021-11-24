@@ -8,12 +8,11 @@ import Home from './components/Home/Home';
 import Messenger from "./components/Messenger/Messenger";
 
 
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {Route, Routes} from "react-router-dom";
 
 
 const App = (props) => {
     return (
-        <BrowserRouter>
             <div className='app_wrapper'>
                 <Header/>
                 <Navbar/>
@@ -22,7 +21,6 @@ const App = (props) => {
                     <Route path="/messenger/*" element={<Messenger messengerPages={props.state.messengerPages} addMessageUser={props.addMessageUser}/>} />
                 </Routes>
             </div>
-        </BrowserRouter>
     );
 }
 

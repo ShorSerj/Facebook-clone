@@ -1,3 +1,5 @@
+import {renderEntryTree} from "../render";
+
 let state = {
     homePages: {
         communityBlock: {
@@ -145,6 +147,6 @@ export let addMessageUser = (newMessage) => {
 
     }
     state.messengerPages.messages.messageUserData.push(addMessage)
-    debugger;
+    renderEntryTree(state)
 }
 export default state
