@@ -1,15 +1,10 @@
-import logo from './logo.svg';
 import './reset.css';
 import './App.css';
-
 import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
 import Home from './components/Home/Home';
 import Messenger from "./components/Messenger/Messenger";
-
-
 import {Route, Routes} from "react-router-dom";
-
 
 const App = (props) => {
     return (
@@ -18,7 +13,7 @@ const App = (props) => {
                 <Navbar/>
                 <Routes>
                     <Route path='/' element={<Home homePages={props.state.homePages} />} />
-                    <Route path="/messenger/*" element={<Messenger messengerPages={props.state.messengerPages} addMessageUser={props.addMessageUser}/>} />
+                    <Route path="/messenger/*" element={<Messenger messengerPages={props.state.messengerPages} dispatch={props.dispatch}/> } />
                 </Routes>
             </div>
     );

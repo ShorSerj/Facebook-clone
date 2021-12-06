@@ -6,10 +6,15 @@ import React from "react";
 
 const Chat = (props) => {
     let newMessage = React.createRef();
+
     let submitMessage = () => {
+        let action = {type: 'ADD-MESSAGE-USER'};
+        props.dispatch(action)
+    }
+    let onMessageChange = () => {
         let text = newMessage.current.value
-        props.addMessageUser(text)
-        newMessage.current.value = ''
+        let action = {type: 'UPDATE-NEW-MESSAGE-TEXT', newMessageText: text};
+        props.dispatch(action)
     }
 
     let messageInterlocutorView = props.messages.messageInterlocutorData.map(m => <Message_interlocutor text={m.text} time={m.time}/>)
@@ -27,7 +32,7 @@ const Chat = (props) => {
             <footer className={s.chat__footer}>
                 <div className={s.inputs__container}>
                     <div className="">
-                        <input className={s.input__typing} type="text" ref={newMessage}/>
+                        <input onChange={onMessageChange} className={s.input__typing} type="text" ref={newMessage} value={props.messages.newMessageText}/>
                         {/*TODO need add buttoms for increase input block */}
                         {/*<div className="">*/}
                         {/*    <svg width="14" height="13" viewBox="0 0 14 13" fill="none"*/}

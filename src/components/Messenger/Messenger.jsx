@@ -6,7 +6,7 @@ const Messenger = (props) => {
     let viewGroupContact = props.messengerPages.groupData.map(c => <Contact img={c.img} name={c.name} message={c.message} id={c.id}/>)
     let viewContact = props.messengerPages.contactData.map(c => <Contact img={c.img} name={c.name} message={c.message} id={c.id}/>)
     let viewChat = props.messengerPages.chatData.map(c => <Chat img={c.img} name={c.name} status={c.status} message={c.message}
-                                              id={c.id} messages={props.messengerPages.messages} addMessageUser={props.addMessageUser}/>)
+                                              id={c.id} messages={props.messengerPages.messages} dispatch={props.dispatch}/>)
 
     return (
         <div className={s.messenger__wrapper}>

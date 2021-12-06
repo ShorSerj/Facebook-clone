@@ -1,6 +1,5 @@
 import s from './Social.module.css'
 import Store from './Store/Store'
-import Contact from "../../Messenger/Contact/Contact";
 
 const Social = (props) => {
     let storeWiev = props.storeData.map(s => <Store img={s.img} name={s.name} alt={s.alt} id={s.id}/>)
