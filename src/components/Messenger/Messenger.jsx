@@ -22,7 +22,7 @@ const Messenger = (props) => {
                         {viewContact}
                     </div>
                 </div>
-                <ChatContainer store={props.store}/>
+                <ChatContainer/>
             </div>
         </div>
     )

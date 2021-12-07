@@ -13,7 +13,7 @@ const App = (props) => {
                 <Navbar/>
                 <Routes>
                     <Route path='/' element={<Home homePages={props.state.homePages} />} />
-                    <Route path="/messenger/*" element={<Messenger messengerPages={props.state.messengerPages} dispatch={props.dispatch} store={props.store}/> } />
+                    <Route path="/messenger/*" element={<Messenger messengerPages={props.state.messengerPages}/> } />
                 </Routes>
             </div>
     );
