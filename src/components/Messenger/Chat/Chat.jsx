@@ -1,23 +1,22 @@
+import React from "react";
+
 import s from './Chat.module.css'
 import Message_interlocutor from "./Message_interlocutor/Message_interlocutor";
 import Message_user from "./Message_user/Message_user";
 import Interlocutor from "./Interlocutor/Interlocutor";
-import React from "react";
 
 const Chat = (props) => {
     let newMessage = React.createRef();
-
-    let submitMessage = () => {
-        let action = {type: 'ADD-MESSAGE-USER'};
-        props.dispatch(action)
+    let onSubmitMessage = () => {
+        props.submitMessage()
     }
     let onMessageChange = () => {
         let text = newMessage.current.value
-        let action = {type: 'UPDATE-NEW-MESSAGE-TEXT', newMessageText: text};
-        props.dispatch(action)
+        props.AddMessageActionCreator(text)
     }
 
-    let messageInterlocutorView = props.messages.messageInterlocutorData.map(m => <Message_interlocutor text={m.text} time={m.time}/>)
+    let messageInterlocutorView = props.messages.messageInterlocutorData.map(m => <Message_interlocutor text={m.text}
+                                                                                                        time={m.time}/>)
     let messageUserView = props.messages.messageUserData.map(m => <Message_user text={m.text} time={m.time}/>)
 
     return (
@@ -32,7 +31,8 @@ const Chat = (props) => {
             <footer className={s.chat__footer}>
                 <div className={s.inputs__container}>
                     <div className="">
-                        <input onChange={onMessageChange} className={s.input__typing} type="text" ref={newMessage} value={props.messages.newMessageText}/>
+                        <input onChange={onMessageChange} className={s.input__typing} type="text" ref={newMessage}
+                               value={props.messages.newMessageText}/>
                         {/*TODO need add buttoms for increase input block */}
                         {/*<div className="">*/}
                         {/*    <svg width="14" height="13" viewBox="0 0 14 13" fill="none"*/}
@@ -43,7 +43,7 @@ const Chat = (props) => {
                         {/*    </svg>*/}
                         {/*</div>*/}
                     </div>
-                    <button className={s.input__audiotext} onClick={submitMessage}>
+                    <button className={s.input__audiotext} onClick={onSubmitMessage}>
                         {/*TODO need change svg when in input__typing have some text */}
                         {/*<svg width="15" height="23" viewBox="0 0 15 23" fill="none" xmlns="http://www.w3.org/2000/svg">*/}
                         {/*    <path*/}

@@ -1,3 +1,5 @@
+import messengerReducer from "./messenger-reducer";
+
 let store = {
     _state: {
         homePages: {
@@ -120,7 +122,7 @@ let store = {
                     name: 'Raghav', message: 'Dinner?'
                 }
             ],
-            messages : {
+            messages: {
                 messageInterlocutorData: [
                     {
                         id: 1,
@@ -139,32 +141,37 @@ let store = {
             }
         },
     },
-    _callSubscriber () {
+    _callSubscriber() {
         console.log('state change')
     },
 
-    getState () {
+    getState() {
         return this._state
     },
-    subscribe (observer) {
+    subscribe(observer) {
         this._callSubscriber = observer
     },
 
     dispatch(action) {
-        if(action.type === 'ADD-MESSAGE-USER'){
-            let addMessage = {
-                id:2,
-                text: this._state.messengerPages.messages.newMessageText,
-                time: 'Today, 17:01pm'
-            }
-            this._state.messengerPages.messages.messageUserData.push(addMessage)
-            this._state.messengerPages.messages.newMessageText = ''
-            this._callSubscriber(this._state)
-        }else if (action.type === 'UPDATE-NEW-MESSAGE-TEXT'){
-            this._state.messengerPages.messages.newMessageText  = action.newMessageText;
-            this._callSubscriber(this._state)
-        }
+        // if (action.type === 'ADD-MESSAGE') {
+        //     let addMessage = {
+        //         id: 2,
+        //         text: this._state.messengerPages.messages.newMessageText,
+        //         time: 'Today, 17:01pm'
+        //     }
+        //     this._state.messengerPages.messages.messageUserData.push(addMessage)
+        //     this._state.messengerPages.messages.newMessageText = ''
+        //     this._callSubscriber(this._state)
+        // } else if (action.type === 'UPDATE-NEW-MESSAGE-TEXT') {
+        //     this._state.messengerPages.messages.newMessageText = action.newMessageText;
+        //     this._callSubscriber(this._state)
+        // }
+        this._state.messengerPages.messages = messengerReducer(this._state.messengerPages.messages, action)
+        this._callSubscriber(this._state)
     }
 }
+
+// export const AddMessageActionCreator = () => ({type: ADD_MESSAGE})
+// export const UpdateNewMessageActionCreator = (text) => ({type: UPDATE_NEW_MESSAGE_TEXT, newMessageText: text})
 
 export default store
