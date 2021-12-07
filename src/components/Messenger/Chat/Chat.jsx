@@ -16,13 +16,13 @@ const Chat = (props) => {
     }
 
     let messageInterlocutorView = props.messages.messageInterlocutorData.map(m => <Message_interlocutor text={m.text}
-                                                                                                        time={m.time}/>)
-    let messageUserView = props.messages.messageUserData.map(m => <Message_user text={m.text} time={m.time}/>)
+                                                                                                        time={m.time} key={m.id}/>)
+    let messageUserView = props.messages.messageUserData.map(m => <Message_user text={m.text} time={m.time} key={m.id}/>)
 
     return (
         <div className={s.chat}>
             <header className={s.chat__title}>
-                <Interlocutor img={props.img} name={props.name} status={props.status}/>
+                <Interlocutor img={props.messages.interlocutorData.img} name={props.messages.interlocutorData.name} status={props.messages.interlocutorData.status}/>
             </header>
             <div className={s.messages}>
                 {messageInterlocutorView}

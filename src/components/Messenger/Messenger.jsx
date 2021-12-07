@@ -3,8 +3,8 @@ import Contact from "./Contact/Contact";
 import ChatContainer from "./Chat/ChatContainer";
 
 const Messenger = (props) => {
-    let viewGroupContact = props.messengerPages.groupData.map(c => <Contact img={c.img} name={c.name} message={c.message} id={c.id}/>)
-    let viewContact = props.messengerPages.contactData.map(c => <Contact img={c.img} name={c.name} message={c.message} id={c.id}/>)
+    let viewGroupContact = props.messengerPages.groupData.map(c => <Contact img={c.img} name={c.name} message={c.message} id={c.id} key={c.id}/>)
+    let viewContact = props.messengerPages.contactData.map(c => <Contact img={c.img} name={c.name} message={c.message} id={c.id} key={c.id}/>)
 
     return (
         <div className={s.messenger__wrapper}>

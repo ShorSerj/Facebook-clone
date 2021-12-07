@@ -20,26 +20,25 @@ let initialState = {
             name: 'Tejeshwini C', message: 'I will call him today.', id: '4'
         },
     ],
-    chatData: {
-            img: 'https://sun9-30.userapi.com/impf/c630316/v630316965/38d02/rx6K5RkMMlw.jpg?size=800x531&quality=96&sign=9dafb86e056d5fc16fb44665b02665cb&c_uniq_tag=EmOifIa3jwHmaw82ndpJ1KlNm6i445VZwOgtikhuzUA&type=album',
-            name: 'Swathi', status: 'online'
-    }
-    ,
     groupData: [
         {
             img: 'https://images.pexels.com/photos/211050/pexels-photo-211050.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;h=627&amp;w=1200',
-            name: 'Raghav', message: 'Dinner?'
+            name: 'Raghav', message: 'Dinner?', id: '1'
         },
         {
             img: 'https://images.pexels.com/photos/211050/pexels-photo-211050.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;h=627&amp;w=1200',
-            name: 'Raghav', message: 'Dinner?'
+            name: 'Raghav', message: 'Dinner?', id: '2'
         },
         {
             img: 'https://images.pexels.com/photos/211050/pexels-photo-211050.jpeg?auto=compress&amp;cs=tinysrgb&amp;fit=crop&amp;h=627&amp;w=1200',
-            name: 'Raghav', message: 'Dinner?'
+            name: 'Raghav', message: 'Dinner?', id: '3'
         }
     ],
     messages: {
+        interlocutorData: {
+            img: 'https://sun9-30.userapi.com/impf/c630316/v630316965/38d02/rx6K5RkMMlw.jpg?size=800x531&quality=96&sign=9dafb86e056d5fc16fb44665b02665cb&c_uniq_tag=EmOifIa3jwHmaw82ndpJ1KlNm6i445VZwOgtikhuzUA&type=album',
+            name: 'Swathi', status: 'online'
+        },
         messageInterlocutorData: [
             {
                 id: 1,
@@ -54,24 +53,38 @@ let initialState = {
                 time: 'Today, 8:22pm'
             }
         ],
-        newMessageText: ''
+        newMessageText: 'Hello'
     }
 }
 
 const messengerReducer = (state = initialState, action) => {
+    let addMessage = {
+        id: 2,
+        text: state.messages.newMessageText,
+        time: 'Today, 17:01pm'
+    }
+
     switch (action.type) {
-        case('ADD-MESSAGE'):
-            let addMessage = {
-                id: 2,
-                text: state.messages.newMessageText,
-                time: 'Today, 17:01pm'
+        case('ADD-MESSAGE'): {
+            return{
+                ...state,
+                messages:
+                    {
+                        ...state.messages,
+                        messageUserData: [...state.messages.messageUserData, addMessage],
+                        newMessageText: ''
+                    }
             }
-            state.messages.messageUserData.push(addMessage)
-            state.messages.newMessageText = ''
-            return state
-        case('UPDATE-NEW-MESSAGE-TEXT') :
-            state.messages.newMessageText = action.newMessageText;
-            return state
+        }
+        case('UPDATE-NEW-MESSAGE-TEXT') : {
+            return {
+                ...state,
+                messages:{
+                    ...state.messages,
+                    newMessageText: action.newMessageText
+                }
+            }
+        }
         default:
             return state
     }
