@@ -1,6 +1,6 @@
-import s from './Message_user.module.css'
+import s from './MessageUser.module.css'
 
-const Message_user = (props) => {
+const MessageUser = (props) => {
     return (
         <div className={s.message_user}>
             <div className={s.user__text}>
@@ -10,4 +10,4 @@ const Message_user = (props) => {
         </div>
     )
 }
-export default Message_user;
+export default MessageUser;

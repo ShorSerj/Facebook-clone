@@ -1,8 +1,8 @@
 import React from "react";
 
 import s from './Chat.module.css'
-import Message_interlocutor from "./Message_interlocutor/Message_interlocutor";
-import Message_user from "./Message_user/Message_user";
+import MessageInterlocutor from "./MessageInterlocutor/MessageInterlocutor";
+import MessageUser from "./MessageUser/MessageUser";
 import Interlocutor from "./Interlocutor/Interlocutor";
 
 const Chat = (props) => {
@@ -15,9 +15,9 @@ const Chat = (props) => {
         props.AddMessageActionCreator(text)
     }
 
-    let messageInterlocutorView = props.messages.messageInterlocutorData.map(m => <Message_interlocutor text={m.text}
+    let messageInterlocutorView = props.messages.messageInterlocutorData.map(m => <MessageInterlocutor text={m.text}
                                                                                                         time={m.time} key={m.id}/>)
-    let messageUserView = props.messages.messageUserData.map(m => <Message_user text={m.text} time={m.time} key={m.id}/>)
+    let messageUserView = props.messages.messageUserData.map(m => <MessageUser text={m.text} time={m.time} key={m.id}/>)
 
     return (
         <div className={s.chat}>

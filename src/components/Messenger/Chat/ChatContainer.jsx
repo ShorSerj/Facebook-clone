@@ -1,4 +1,3 @@
-import React from "react";
 import {AddMessageActionCreator, UpdateNewMessageActionCreator} from "../../../redux/messenger-reducer";
 import Chat from "./Chat";
 import {connect} from "react-redux";

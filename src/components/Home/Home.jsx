@@ -1,16 +1,16 @@
-import Community from './Community/Community';
-import News from './News/News';
-import Social from './Social/Social';
+import Community from './Community/Community'
+import NewsContainer from './News/NewsContainer'
+import SocialContainer from './Social/SocialContainer'
 
 import s from './Home.module.css'
 
 const Home = (props) => {
-    return (
-        <div className={s.content_wrapper}>
-            <Community communityBlock={props.homePages.communityBlock}/>
-            <News newsData={props.homePages.newsData}/>
-            <Social storeData={props.homePages.storeData} />
-        </div>
-    )
+  return (
+    <main className={s.content_wrapper}>
+      <Community />
+      <NewsContainer />
+      <SocialContainer />
+    </main>
+  )
 }
-export default Home;
+export default Home

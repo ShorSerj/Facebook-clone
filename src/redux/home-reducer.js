@@ -28,14 +28,12 @@ let initialState = {
             },
 
         ],
-        discussionData: [
-            {
+        discussionData: {
                 id: 1,
-                photo: "https://carline25.ru/assets/images/background/no_avatar.png",
+                img: "https://static.tildacdn.com/tild3662-3765-4431-b934-393761356233/71317324_17535198697.png",
                 name: 'Jessica’s Wedding Plan',
                 status: 'Active Now'
-            }
-        ],
+        },
     },
     storeData: [
         {

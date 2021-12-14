@@ -1,19 +1,22 @@
 import './reset.css';
 import './App.css';
-import Header from './components/Header/Header';
-import Navbar from './components/Navbar/Navbar';
-import Messenger from "./components/Messenger/Messenger";
-import {Route, Routes} from "react-router-dom";
-import store from "./redux/redux-store";
+import Header from './components/Header/Header.jsx';
+import Navbar from './components/Navbar/Navbar.jsx';
+import Home from './components/Home/Home.jsx';
+import Authorization from './components/Authorization/Authorization.jsx';
+import Messenger from './components/Messenger/Messenger.jsx';
+import {Route, Routes} from 'react-router-dom';
+import store from './redux/redux-store';
 
-const App = (props) => {
+const App = () => {
     return (
             <div className='app_wrapper'>
                 <Header/>
                 <Navbar/>
                 <Routes>
-                    {/*<Route path='/' element={<Home homePages={props.state.homePages} />} />*/}
-                    <Route path="/messenger/*" element={<Messenger messengerPages={store.getState().messengerPages}/> } />
+                    <Route path='/' element={<Home/>} />
+                    <Route path='/logIn' element={<Authorization/>}/>
+                    <Route path="/messenger/*" element={<Messenger messengerPages={store.getState().messengerPages}/> }/>
                 </Routes>
             </div>
     );

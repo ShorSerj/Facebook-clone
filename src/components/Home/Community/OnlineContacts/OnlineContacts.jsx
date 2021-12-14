@@ -2,7 +2,7 @@ import Friend from './friend/Friend'
 import s from './OnlineContacts.module.css'
 
 const OnlineContacts = (props) => {
-    let friendsVisibility= props.onlineContactsData.map(f => <Friend avatar={f.avatar} name={f.name}/>)
+    let friendsVisibility= props.onlineContactsData.map(f => <Friend avatar={f.avatar} name={f.name} key={f.id}/>)
 
     return (
         <div className={s.onlineContacts__container}>
