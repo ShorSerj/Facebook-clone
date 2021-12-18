@@ -1,0 +1,52 @@
+{
+    "id":21324354658798,
+    "status":{"code":0},
+    "warnings":{"text":""},
+    "items":[
+      {
+        "id": 1,
+        "photoUrl":
+          "https://avatars.mds.yandex.net/i?id=2a0e36b033638edd07d286d433aa65ab-4299556-images-thumbs&n=13",
+        "followed": false,
+        "fullNmae": "Dmitriy",
+        "status": "I'm a boss",
+        "location": { "country": "Russia", "city": "Kazan" }
+      },
+      {
+        "id": 2,
+        "photoUrl":
+          "https://avatars.mds.yandex.net/i?id=2a0e36b033638edd07d286d433aa65ab-4299556-images-thumbs&n=13",
+        "followed": false,
+        "fullNmae": "Dmitriy",
+        "status": "I'm a boss",
+        "location": { "country": "Russia", "city": "Kazan" }
+      },
+      {
+        "id": 3,
+        "photoUrl":
+          "https://avatars.mds.yandex.net/i?id=2a0e36b033638edd07d286d433aa65ab-4299556-images-thumbs&n=13",
+        "followed": false,
+        "fullNmae": "Dmitriy",
+        "status": "I'm a boss",
+        "location": { "country": "Russia", "city": "Kazan" }
+      },
+      {
+        "id": 4,
+        "photoUrl":
+          "https://avatars.mds.yandex.net/i?id=2a0e36b033638edd07d286d433aa65ab-4299556-images-thumbs&n=13",
+        "followed": false,
+        "fullNmae": "Dmitriy",
+        "status": "I'm a boss",
+        "location": { "country": "Russia", "city": "Kazan" }
+      },
+      {
+        "id": 5,
+        "photoUrl":
+          "https://avatars.mds.yandex.net/i?id=2a0e36b033638edd07d286d433aa65ab-4299556-images-thumbs&n=13",
+        "followed": false,
+        "fullNmae": "Dmitriy",
+        "status": "I'm a boss",
+        "location": { "country": "Russia", "city": "Kazan" }
+      }
+    ]
+  }

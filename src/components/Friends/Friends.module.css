@@ -1,0 +1,96 @@
+main {
+    grid-area: content;
+    margin: 0 auto;
+    width: 1150px;
+    display: flex;
+}
+
+.navbar {
+    margin-right: 175px;
+    height: 100%;
+}
+
+.users__container {
+    margin: 38px 36px;
+    width: 100%;
+}
+
+.users__title {
+    font-weight: 700;
+    font-size: 19px;
+}
+
+.users {
+    display: grid;
+    margin-top: 20px;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 9px;
+}
+
+.user {
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.user__avatar {
+    height: 210px;
+    width: 210px;
+}
+
+.user__avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    object-position: top;
+}
+
+.text__wrapper {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.text {
+    display: block;
+    font-weight: 600;
+    margin-left: 13px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.button_add {
+    background-color: #E7F3FF;
+    margin-top: 40px;
+    width: 185px;
+    height: 36px;
+    border-radius: 5px;
+    color: #1877F2;
+    font-weight: 600;
+}
+
+.button_add:hover {
+    background-color: #E4E6EB;
+}
+
+.button_del {
+    margin-top: 6px;
+    width: 185px;
+    height: 36px;
+    border-radius: 5px;
+    background-color: #E4E6EB;
+    margin-bottom: 12px;
+    color: #050505;
+    font-weight: 600;
+}
+
+.button_del:hover {
+    background-color: #D8DADF;
+}

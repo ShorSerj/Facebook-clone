@@ -9,6 +9,9 @@ const Header = () => {
                     <NavLink to='/' className = { navData => navData.isActive ? s.activeLink : s.item } >Home</NavLink>
                 </li>
                 <li>
+                    <NavLink to='/friends' className = { navData => navData.isActive ? s.activeLink : s.item }>Friends</NavLink>
+                </li>
+                <li>
                     <NavLink to='/notification' className = { navData => navData.isActive ? s.activeLink : s.item }>Notification</NavLink>
                 </li>
                 <li>
