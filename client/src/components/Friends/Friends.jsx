@@ -4,8 +4,8 @@ import s from './Friends.module.css'
 
 class Friends extends React.Component {
   componentDidMount() {
-    axios.get('http://localhost:8000/friends').then((response) => {
-      this.props.setUsers(response.data.items)
+    axios.get('http://localhost:3003/users/all').then((response) => {
+      this.props.setUsers(response.data)
     })
   }
   render() {

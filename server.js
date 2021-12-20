@@ -1,61 +1,28 @@
-import express from "express";
-// const routes = require('./routes/routes');
-import fs  from 'fs';
-import path from 'path';
-import bodyParser  from'body-parser';
-import cors from 'cors'
+import express from 'express';
+import cors from 'cors';
+import morgan from 'morgan';
+import helmet from 'helmet';
+import mongoSanitize from 'express-mongo-sanitize';
+import fs from 'fs';
+import router from './routes/users.js';
 
- // Use this after the variable declaration
-const app = express();
-const __dirname = path.resolve()
 
-const PORT = process.env.PORT || 8000;
 
-// Use Node.js body parsing middleware
+const app = express(),
+ port = process.env.PORT || 3000
+
+app.use(morgan(process.env.LOG_LEVEL))
+app.use(helmet());
+app.use(express.json());
+app.use(express.urlencoded({extended:false}))
+app.use(mongoSanitize())
 app.use(cors())
-app.use(express.static(__dirname + "/src"));
-app.use(bodyParser.json());
 
-fs.createWriteStream(__dirname + 'createHistory.txt')
+fs.readdirSync('./routes/').forEach(file =>{
+    let fileName = file.slice(0, -3)
+    app.use('/' + fileName, router)
+})
 
-app.get('/friends', (req, res) => {
-    const fPath = path.resolve(__dirname, 'src/routes/response.json')
-
-    fs.readFile(fPath, (err, data) => {
-        if (err) {
-            throw err;
-        }
-        res.type('json').send(data)
-    })
-});
-
-// app.post('/fixTitleColumn', (req, res) => {
-//     let id = req.body
-//     for (let key in id) {
-//         // console.log(key + ": " + id[key]);
-//         fs.appendFile('createHistory.txt', key + ": " + id[key] + "   ", function (error) {
-//             if (error) throw error;
-//         });
-//     }
-//     res.send()
-// });
-
-// app.post('/fixTitleTask', (req, res) => {
-//     let id = req.body
-//     for (let key in id) {
-//         // console.log(key + ": " + id[key]);
-//         fs.appendFile('createHistory.txt', key + ": " + id[key] + "   ", function (error) {
-//             if (error) throw error;
-//         });
-//     }
-//     res.send()
-// });
-
-// Start the server
-const server = app.listen(PORT, (error) => {
-    if (error) {
-        throw error
-    }
-
-    console.log(`Server listening on port ${PORT}`);
-});
+app.listen(port, ()=>{
+    console.log('Server started on http://localhost:' + port)
+})

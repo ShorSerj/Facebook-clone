@@ -12,8 +12,8 @@
     "express": "^4.17.2",
     "express-mongo-sanitize": "^2.1.0",
     "helmet": "^4.6.0",
-    "cors": "^2.8.5",
     "mongoose": "^6.1.2",
+    "cors": "^2.8.5",
     "morgan": "^1.10.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -24,10 +24,8 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "react-scripts index.js",
+    "start": "react-scripts start",
     "server": "nodemon server.js",
-    "client": "npm run start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
