@@ -1,52 +1,64 @@
-import * as axios from 'axios'
 import React from 'react'
 import s from './Friends.module.css'
 
-class Friends extends React.Component {
-  componentDidMount() {
-    axios.get('http://localhost:3003/users/all').then((response) => {
-      this.props.setUsers(response.data)
-    })
+const Friends = (props) => {
+  let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize)
+  let pages = []
+  for (let i = 1; i <= pagesCount; i++) {
+    pages.push(i)
   }
-  render() {
-    return (
-      <main>
-        <div className={s.navbar}></div>
-        <div className={s.users__container}>
-          <h2 className={s.users__title}>Вы можете их знать</h2>
-          <div className={s.users}>
-            {this.props.users.map((u) => (
-              <div className={s.user} key={u.id}>
-                <div className={s.user__avatar}>
-                  <img src={u.photoUrl} alt="" />
-                </div>
-                <div className={s.text__wrapper}>
-                  <span className={s.text}>{u.fullNmae}</span>
-                  <div className={s.buttons}>
-                    <button
-                      className={s.button_add}
-                      onClick={() => {
-                        this.props.follow(u.id)
-                      }}
-                    >
-                      Добавить
-                    </button>
-                    <button
-                      className={s.button_del}
-                      onClick={() => {
-                        console.log(this.props.users)
-                      }}
-                    >
-                      Удалить
-                    </button>
-                  </div>
+  return (
+    <main>
+      <div className={s.navbar}></div>
+      <div className={s.users__container}>
+        <div className={s.pages}>
+          {pages.map((p) => {
+            return (
+              <span 
+                className={props.currentPage === p && s.selectedPage}
+                onClick={(e) => {
+                  props.onCurrentPage(p)
+                }}
+              >
+                {p}
+              </span>
+            )
+          })}
+        </div>
+        <h2 className={s.users__title}>Вы можете их знать</h2>
+        <div className={s.users}>
+          {props.users.map((u) => (
+            <div className={s.user} key={u.id}>
+              <div className={s.user__avatar}>
+                <img src={u.photoUrl} alt="" />
+              </div>
+              <div className={s.text__wrapper}>
+                <span className={s.text}>{u.fullNmae}</span>
+                <div className={s.buttons}>
+                  <button
+                    className={s.button_add}
+                    onClick={() => {
+                      props.follow(u.id)
+                    }}
+                  >
+                    Добавить
+                  </button>
+                  <button
+                    className={s.button_del}
+                    onClick={() => {
+                      console.log(props.users)
+                    }}
+                  >
+                    Удалить
+                  </button>
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
-      </main>
-    )
-  }
+      </div>
+    </main>
+  )
 }
+
 export default Friends

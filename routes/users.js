@@ -19,7 +19,9 @@ router.get('/', (req, res) => {
             if (err) {
                 return res.status(400).json({ message: 'Error get index user', err})
             }
-            let man = data.slice(startIndex, endIndex)
+            let man = {}
+            man.users = data.slice(startIndex, endIndex)
+            man.totalCount = data.length
             res.json(man)
     })
 })
