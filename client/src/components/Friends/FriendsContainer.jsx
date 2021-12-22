@@ -2,38 +2,38 @@ import React from 'react'
 import * as axios from 'axios'
 import { connect } from 'react-redux'
 import {
-  followAC,
-  setUsersAC,
-  unfollowAC,
-  setCurrentPageAC,
-  setTotalUsersCountAC,
-  toogleIsFetchingAC,
+  follow,
+  setUsers,
+  unfollow,
+  setCurrentPage,
+  setTotalUsersCount,
+  toogleIsFetching,
 } from '../../redux/friends-reducer'
 import Friends from './Friends'
 import Preloader from '../common/Preloader/Preloader'
 
 class FriendsAPIComponent extends React.Component {
   componentDidMount() {
-    this.props.toogleIsFetchingAC(true)
+    this.props.toogleIsFetching(true)
     axios
       .get(
         `http://localhost:3003/users/?page=${this.props.currentPage}&limit=${this.props.pageSize}`
       )
       .then((response) => {
-        this.props.toogleIsFetchingAC(false)
+        this.props.toogleIsFetching(false)
         this.props.setUsers(response.data.users)
         this.props.setTotalUsersCount(response.data.totalCount)
       })
   }
   onCurrentPage = (pageNumber) => {
-    this.props.toogleIsFetchingAC(true)
+    this.props.toogleIsFetching(true)
     this.props.setCurrentPage(pageNumber)
     axios
       .get(
         `http://localhost:3003/users/?page=${pageNumber}&limit=${this.props.pageSize}`
       )
       .then((response) => {
-        this.props.toogleIsFetchingAC(false)
+        this.props.toogleIsFetching(false)
         this.props.setUsers(response.data.users)
       })
   }
@@ -65,31 +65,9 @@ let mapStateToProps = (state) => {
   }
 }
 
-let mapDispatchToProps = (dispatch) => {
-  return {
-    follow: (userId) => {
-      dispatch(followAC(userId))
-    },
-    unfollow: (userId) => {
-      dispatch(unfollowAC(userId))
-    },
-    setUsers: (userId) => {
-      dispatch(setUsersAC(userId))
-    },
-    setCurrentPage: (pageNumber) => {
-      dispatch(setCurrentPageAC(pageNumber))
-    },
-    setTotalUsersCount: (totalCount) => {
-      dispatch(setTotalUsersCountAC(totalCount))
-    },
-    toogleIsFetchingAC: (isFetching) => {
-      dispatch(toogleIsFetchingAC(isFetching))
-    },
-  }
-}
 const FriendsContainer = connect(
   mapStateToProps,
-  mapDispatchToProps
+  {follow, unfollow, setUsers, setCurrentPage,setTotalUsersCount,toogleIsFetching}
 )(FriendsAPIComponent)
 
 export default FriendsContainer
