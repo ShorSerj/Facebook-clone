@@ -17,7 +17,7 @@ class FriendsAPIComponent extends React.Component {
     this.props.toogleIsFetching(true)
     axios
       .get(
-        `http://localhost:3003/users/?page=${this.props.currentPage}&limit=${this.props.pageSize}`
+        `http://localhost:3003/api/1.0/users/?page=${this.props.currentPage}&limit=${this.props.pageSize}`
       )
       .then((response) => {
         this.props.toogleIsFetching(false)
@@ -30,7 +30,7 @@ class FriendsAPIComponent extends React.Component {
     this.props.setCurrentPage(pageNumber)
     axios
       .get(
-        `http://localhost:3003/users/?page=${pageNumber}&limit=${this.props.pageSize}`
+        `http://localhost:3003/api/1.0/users/?page=${pageNumber}&limit=${this.props.pageSize}`
       )
       .then((response) => {
         this.props.toogleIsFetching(false)
@@ -65,9 +65,13 @@ let mapStateToProps = (state) => {
   }
 }
 
-const FriendsContainer = connect(
-  mapStateToProps,
-  {follow, unfollow, setUsers, setCurrentPage,setTotalUsersCount,toogleIsFetching}
-)(FriendsAPIComponent)
+const FriendsContainer = connect(mapStateToProps, {
+  follow,
+  unfollow,
+  setUsers,
+  setCurrentPage,
+  setTotalUsersCount,
+  toogleIsFetching,
+})(FriendsAPIComponent)
 
 export default FriendsContainer

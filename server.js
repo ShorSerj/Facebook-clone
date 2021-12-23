@@ -4,7 +4,8 @@ import morgan from 'morgan';
 import helmet from 'helmet';
 import mongoSanitize from 'express-mongo-sanitize';
 import fs from 'fs';
-import router from './routes/users.js';
+import users from './routes/users.js';
+import profile from './routes/profile.js';
 
 
 
@@ -19,8 +20,10 @@ app.use(mongoSanitize())
 app.use(cors())
 
 fs.readdirSync('./routes/').forEach(file =>{
-    let fileName = file.slice(0, -3)
-    app.use('/' + fileName, router)
+    // let fileName = file.slice(0, -3)
+    app.use('/api/1.0/users/' , users)
+    app.use('/api/1.0/profile/', profile)
+    
 })
 
 app.listen(port, ()=>{

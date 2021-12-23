@@ -9,14 +9,15 @@ import Messenger from './components/Messenger/Messenger.jsx';
 import {Route, Routes} from 'react-router-dom';
 import store from './redux/redux-store';
 import FriendsContainer from './components/Friends/FriendsContainer';
+import ProfileConteiner from './components/Profile/ProfileContainer';
 
 const App = () => {
     return (
             <div className='app_wrapper'>
                 <Header/>
-                <Navbar/>
                 <Routes>
                     <Route path='/' element={<Home/>} />
+                    <Route path='/profile' element={<ProfileConteiner/> }/>
                     <Route path='/friends' element={<FriendsContainer/>} />
                     <Route path='/logIn' element={<Authorization/>}/>
                     <Route path="/messenger/*" element={<Messenger messengerPages={store.getState().messengerPages}/> }/>

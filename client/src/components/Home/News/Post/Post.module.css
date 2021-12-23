@@ -15,6 +15,7 @@
 
 .author {
     display: flex;
+    flex-flow: inherit;
 }
 
 .author img {
