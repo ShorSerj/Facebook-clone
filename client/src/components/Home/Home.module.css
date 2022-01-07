@@ -1,0 +1,6 @@
+.content_wrapper {
+    margin: 22px 0 0 106px;
+    grid-area: content;
+    display: flex;
+  }
+  

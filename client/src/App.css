@@ -1,0 +1,26 @@
+@font-face {
+  font-family: "Montcerat";
+  src: url(./assets/fonts/Montserrat-Regular.ttf);
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Montcerat";
+  src: url(./assets/fonts/Montserrat-Medium.ttf);
+  font-weight: 500;
+}
+
+
+body {
+  background-color: #F1F2F6;
+  font-family: "Montcerat";
+  font-weight: 300;
+}
+
+.app_wrapper {
+  display: grid;
+  grid-template-areas:
+    "navbar header header"
+    "navbar content content"
+    "navbar content content";
+}

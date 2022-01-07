@@ -1,0 +1,28 @@
+.nav {
+    grid-area: navbar;
+    background-color: white;
+    width: 75px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-right: 1.5px solid #F1F2F6;
+}
+
+.social_logo {
+    margin: 0 auto;
+    display: block;
+    height: 70px;
+}
+
+.links_menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.links_menu li {
+    margin-top: 31px;
+
+}

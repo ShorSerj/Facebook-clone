@@ -1,0 +1,14 @@
+.reviews__wrapp {
+    display: flex;
+    align-items: start;
+}
+
+.wrapp__counter {
+    font-weight: 500;
+    font-size: 9px;
+    line-height: 11px;
+    color: #788292;
+    opacity: 0.5;
+    margin-left: 4px;
+    margin-right: 13px;
+}

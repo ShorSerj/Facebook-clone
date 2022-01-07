@@ -1,0 +1,369 @@
+.user__profile {
+    font-family: 'Segoe UI';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+header {
+    background-color: #FFFFFF;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cover img {
+    width: 940px;
+    max-height: 348px;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    object-fit: cover;
+}
+
+.person__wrapper {
+    position: relative;
+    margin-top: 25px;
+    display: flex;
+    width: 940px;
+}
+
+.inform__wrapper {
+    margin-left: 221px;
+}
+
+.person__avatar {
+    position: absolute;
+    top: -59px;
+    left: 32px;
+}
+
+.person__avatar img {
+    width: 175px;
+    border-radius: 100%;
+    height: 174px;
+    object-fit: cover;
+}
+
+.person__name {
+    font-family: 'Segoe UI';
+    font-weight: 700;
+    font-size: 32px;
+}
+
+.friends__wrapper {
+    color: #65676B;
+    font-family: 'Segoe UI';
+    display: flex;
+    margin-top: 8px;
+    font-size: 17px;
+    line-height: 20px;
+    font-weight: 500;
+}
+
+.friends__counter {
+    margin-right: 5px;
+}
+
+.friends__mutual::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '•';
+}
+
+.friends__mutual {
+    padding-left: 11px;
+    position: relative;
+}
+
+.interactions {
+    margin-left: 86px;
+    margin-top: 65px;
+    display: flex;
+}
+
+.addFriend,
+.addMessage {
+    cursor: pointer;
+    padding: 11px 12px 10px 12px;
+    margin-right: 4px;
+    border-radius: 5px;
+    margin-left: 4px;
+    background-color: #E4E6EB;
+    font-weight: 600;
+    color: #050505;
+}
+
+.addFriend span,
+.addMessage span {
+    margin-left: 7px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.addMessage {
+    background-color: #1A6ED8;
+    color: white;
+}
+
+.addMessage img {
+    filter: invert(100%);
+}
+
+.profileTabs__wrapper {
+    margin: 31px 31px 0px 32px;
+    border-top: solid 1px #CED0D4;
+    display: flex;
+    align-items: center;
+
+}
+
+.profileTabs {
+    font-family: 'Segoe UI';
+    display: flex;
+    margin: 22px 15px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+.profileTabs li {
+    margin-right: 31.6px;
+}
+
+.profileTabs__more {
+    margin-left: 151px;
+    padding: 8px 14px;
+    border-radius: 8px;
+    background-color: #EDEDED;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.content_wrapper {
+    margin-top: 16px;
+    display: flex;
+    max-width: 877px;
+}
+
+.content_wrapper h3 {
+    font-family: 'Segoe UI';
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.short__inform,
+.users__foto,
+.friends {
+    width: 360px;
+    background-color: white;
+    margin-right: 16px;
+    padding: 15px 15px 23px 16px;
+    border-radius: 10px;
+}
+
+.users__foto,
+.friends {
+    margin-top: 14px;
+}
+
+.add__publication {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.publication__addText {
+    padding: 10px 6px 10px 15px;
+    display: flex;
+}
+
+.publication__addText img {
+    width: 43px;
+    border-radius: 100%;
+}
+
+.publication__text {
+    margin: 3px 9px 1px;
+    background-color: #E4E6E9;
+    padding-left: 10px;
+    border-radius: 20px;
+    width: 420px;
+    font-family: 'Segoe UI';
+    font-weight: 400;
+    font-size: 17px;
+    color: #65676B;
+    display: flex;
+    align-items: center;
+}
+
+.publication__addElse {
+    padding: 17px 0px 16px 0px;
+    display: flex;
+    border-top: solid 1px #CED0D4;
+    margin: 1px 25px;
+}
+
+.publication__live,
+.publication__photo,
+.publication__event {
+    display: flex;
+    align-items: center;
+    margin-right: 23px;
+}
+
+.publication__event {
+    margin-right: 0;
+}
+
+.live__svg,
+.photo__svg {
+    font-size: 24px;
+    fill: #E73F5A;
+}
+
+.photo__svg {
+    fill: #45BD62;
+}
+
+.events__svg i {
+    background-image: url("https://static.xx.fbcdn.net/rsrc.php/v3/yZ/r/EYhZy-d2Q5k.png");
+    background-position: 0px -210px;
+    background-size: 26px 788px;
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+
+.live__text,
+.photo__text,
+.event__text {
+    font-size: 15px;
+    color: #65676B;
+    margin-left: 8px;
+    font-weight: 500;
+}
+
+.publications__container {
+    margin-top: 15px;
+    background-color: white;
+    border-radius: 8px;
+    padding: 8px 17px 0 16px;
+    position: relative;
+}
+
+.publications__container::before {
+    content: '';
+    border-top: solid 1px #CED0D4;
+    top: 53px;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    position: absolute;
+}
+
+
+.filters {
+    display: flex;
+}
+
+.publications__title {
+    padding-top: 5px;
+}
+
+.filter,
+.control {
+    margin-left: 97px;
+    width: 109px;
+    background-color: #E4E6EB;
+    border-radius: 8px;
+    padding: 11px 0px 8px;
+    display: flex;
+    justify-content: center;
+}
+
+.control {
+    margin-left: 10px;
+    width: 130px;
+}
+
+.filter:hover {
+    background-color: #D8DADF;
+}
+
+.filter__logo i {
+    background-image: url("https://static.xx.fbcdn.net/rsrc.php/v3/yj/r/b9_EhFuHyAF.png");
+    background-position: 0px -108px;
+    background-size: 18px 426px;
+    width: 16px;
+    height: 16px;
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+
+.filter__text,
+.control__text {
+    font-size: 15px;
+    font-weight: 500;
+    color: #050505;
+    margin-left: 6px;
+}
+
+.control__logo i {
+    background-image: url("https://static.xx.fbcdn.net/rsrc.php/v3/yj/r/b9_EhFuHyAF.png");
+    background-position: 0px -324px;
+    background-size: 18px 426px;
+    width: 16px;
+    height: 16px;
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+
+.publications__vie {
+    display: flex;
+    margin-top: 22px;
+    font-size: 15px;
+    color: #65676B;
+    font-weight: 600;
+    padding-bottom: 10px;
+}
+
+.list,
+.grid {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+}
+
+.list span,
+.grid span {
+    margin-left: 3px;
+}
+
+.list__svg i {
+    background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yj/r/b9_EhFuHyAF.png);
+    background-position: 0px -270px;
+    background-size: 18px 426px;
+    width: 16px;
+    height: 16px;
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+
+.grid__svg i {
+    background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yj/r/b9_EhFuHyAF.png);
+    background-position: 0px -162px;
+    background-size: 18px 426px;
+    width: 16px;
+    height: 16px;
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+
+.news {
+    width: 500px;
+}

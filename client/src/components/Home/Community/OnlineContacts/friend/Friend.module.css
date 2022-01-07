@@ -1,0 +1,21 @@
+.onlineContacts__item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #F1F2F6;
+  margin-top: 9px;
+}
+
+.onlineContacts__item img {
+  width: 42px;
+  height: 42px;
+  margin-right: 14px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.friend__name {
+  font-size: 13px;
+  color: #788292;
+}
