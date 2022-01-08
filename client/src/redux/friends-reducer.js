@@ -9,7 +9,7 @@ const TOOGLE_IS_FETCHING = 'TOOGLE_IS_FETCHING'
 
 let initialState = {
     users: [],
-    pageSize: 4,git
+    pageSize: 4,
     totalUsersCount: 1,
     currentPage: 1,
     isFetching: false
@@ -55,14 +55,14 @@ const friendsReducer = (state = initialState, action) => {
 }
 
 }
-export const follow = (userId) => ({type: FOLLOW, userId})
+export const followSucces = (userId) => ({type: FOLLOW, userId})
 export const unfollow = (userId) => ({type: UNFOLLOW, userId})
 export const setUsers = (users) => ({type: SET_USERS, users})
 export const setCurrentPage = (currentPage) => ({type: SET_CURRENT_PAGE, currentPage:currentPage})
 export const setTotalUsersCount = (currentPage) => ({type: SET_TOTAL_USERS_COUNT, count: currentPage})
 export const toogleIsFetching = (isFetching) => ({type: TOOGLE_IS_FETCHING, isFetching})
 
-export const getUsers = (currentPage, pageSize) => {
+export const getUsers = (currentPage=1, pageSize=4) => {
     return (dispatch) => {
         dispatch(toogleIsFetching(true))
         usersAPI.getUsers(currentPage, pageSize)
@@ -70,6 +70,17 @@ export const getUsers = (currentPage, pageSize) => {
             dispatch(toogleIsFetching(false))
             dispatch(setUsers(response.data.users))
             dispatch(setTotalUsersCount(response.data.totalCount))
+          })
+    } 
+}
+
+export const follow = (userId) => {
+    return (dispatch) => {
+        dispatch(toogleIsFetching(true))
+        usersAPI.followUser(userId)
+          .then((response) => {
+            dispatch(toogleIsFetching(false))
+            dispatch(followSucces(userId))
           })
     } 
 }

@@ -2,12 +2,12 @@ import React from 'react'
 import { connect } from 'react-redux'
 import {
   follow,
-  unfollow,
   getUsers
 } from '../../redux/friends-reducer'
 import Friends from './Friends'
 import Preloader from '../common/Preloader/Preloader'
-import { usersAPI } from '../../api/api'
+import { withAuthRedirect } from '../../hoc/withAuthRedirect'
+import { compose } from 'redux'
 
 class FriendsAPIComponent extends React.Component {
   componentDidMount() {
@@ -16,6 +16,10 @@ class FriendsAPIComponent extends React.Component {
   
   onCurrentPage = (pageNumber) => {
     this.props.getUsers(pageNumber, this.props.pageSize)
+  }
+
+  addToFriends = (userId) => {
+    this.props.follow(userId)
   }
 
   render() {
@@ -27,7 +31,7 @@ class FriendsAPIComponent extends React.Component {
           pageSize={this.props.pageSize}
           currentPage={this.props.currentPage}
           onCurrentPage={this.onCurrentPage}
-          follow={this.props.follow}
+          follow={this.addToFriends}
           users={this.props.users}
         />
       </>
@@ -38,17 +42,15 @@ class FriendsAPIComponent extends React.Component {
 let mapStateToProps = (state) => {
   return {
     users: state.friendsPage.users,
+    follow: state.friendsPage.users.follow,
     pageSize: state.friendsPage.pageSize,
     totalUsersCount: state.friendsPage.totalUsersCount,
     currentPage: state.friendsPage.currentPage,
     isFetching: state.friendsPage.isFetching,
   }
 }
+export default compose(
+  connect(mapStateToProps, {follow, getUsers}),
+  // withAuthRedirect
+)(FriendsAPIComponent)
 
-const FriendsContainer = connect(mapStateToProps, {
-  follow,
-  unfollow,
-  getUsers
-})(FriendsAPIComponent)
-
-export default FriendsContainer

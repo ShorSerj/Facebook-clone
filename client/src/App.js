@@ -1,8 +1,6 @@
 import React from 'react';
 import './reset.css';
 import './App.css';
-import Header from './components/Header/Header.jsx';
-import Navbar from './components/Navbar/Navbar.jsx';
 import Home from './components/Home/Home.jsx';
 import Authorization from './components/Authorization/Authorization.jsx';
 import Messenger from './components/Messenger/Messenger.jsx';
@@ -11,13 +9,16 @@ import store from './redux/redux-store';
 import FriendsContainer from './components/Friends/FriendsContainer';
 import ProfileConteiner from './components/Profile/ProfileContainer';
 import HeaderContainer from './components/Header/HeaderContainer';
+import Login from './components/Login/Login';
 
 const App = () => {
+    
     return (
             <div className='app_wrapper'>
                 <HeaderContainer/>
                 <Routes>
                     <Route path='/' element={<Home/>} />
+                    <Route path='/login' element={<Login/>} />
                     <Route path="profile" element={<ProfileConteiner />}>
                         <Route path=":userId" element={<ProfileConteiner />} />
                     </Route>

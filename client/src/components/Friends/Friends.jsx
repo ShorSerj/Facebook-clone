@@ -1,4 +1,5 @@
 import React from 'react'
+import { Route, Routes } from "react-router-dom";
 import s from './Friends.module.css'
 
 const Friends = (props) => {
@@ -7,6 +8,7 @@ const Friends = (props) => {
   for (let i = 1; i <= pagesCount; i++) {
     pages.push(i)
   }
+
   return (
     <main>
       <div className={s.navbar}></div>
@@ -38,7 +40,7 @@ const Friends = (props) => {
                   <button
                     className={s.button_add}
                     onClick={() => {
-                      props.follow(u.id)
+                      props.follow(u._id)
                     }}
                   >
                     Добавить
@@ -47,6 +49,7 @@ const Friends = (props) => {
                     className={s.button_del}
                     onClick={() => {
                       console.log(props.users)
+                      alert(props.isAuth)
                     }}
                   >
                     Удалить

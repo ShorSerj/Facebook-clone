@@ -6,6 +6,7 @@ import mongoSanitize from 'express-mongo-sanitize';
 import fs from 'fs';
 import users from './routes/users.js';
 import profile from './routes/profile.js';
+import follow from './routes/follow.js';
 
 
 
@@ -24,6 +25,7 @@ app.use(cors())
 fs.readdirSync('./routes/').forEach(file =>{
     app.use('/api/1.0/users/' , users)
     app.use('/api/1.0/profile/', profile)
+    app.use('/api/1.0/follow/', follow)
 })
 
 app.listen(port, ()=>{

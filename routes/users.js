@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
     const startIndex = (page-1) * limit
     const endIndex = page * limit
 
-    User.find({},(err, data) => {
+    User.find({followed:false},(err, data) => {
             if (err) {
                 return res.status(400).json({ message: 'Error get index user', err})
             }

@@ -18,7 +18,7 @@ const schema = new db.Schema({
     },
     followed: {
         type: Boolean,
-        required:true,
+        default: false
     },
     fullName: {
         type:String,

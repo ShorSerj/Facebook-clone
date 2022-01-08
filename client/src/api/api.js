@@ -14,12 +14,30 @@ export const usersAPI = {
             `http://localhost:3003/api/1.0/users/?page=${currentPage}&limit=${pageSize}`
           )
     },
+
     getUser(){
         return instance.get(`auth/me`).then(
             response => {
                 return response.data
             }
         )
-    }
-    
+    },
+
+    followUser (userId) {
+        return axios.post(`http://localhost:3003/api/1.0/follow/` + userId) 
+        .then((response) => {
+          return response.data
+        })
+    },
+
+    getProfile (userId) {
+        if (!userId) {
+          userId = '2'
+        }
+        return axios.get(`http://localhost:3003/api/1.0/profile/?userId=` + userId)
+          .then((response) => {
+              
+            return response.data
+          })
+    }    
 }
