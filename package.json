@@ -8,11 +8,13 @@
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.24.0",
+    "connect-mongo": "^4.6.0",
+    "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.2",
     "express-mongo-sanitize": "^2.1.0",
+    "express-session": "^1.17.2",
     "helmet": "^4.6.0",
-    "cors": "^2.8.5",
     "mongoose": "^6.1.2",
     "morgan": "^1.10.0",
     "react": "^17.0.2",
@@ -21,6 +23,8 @@
     "react-router-dom": "^6.0.2",
     "react-scripts": "4.0.3",
     "redux": "^4.1.2",
+    "redux-form": "^8.3.8",
+    "redux-thunk": "^2.4.1",
     "web-vitals": "^1.1.2"
   },
   "scripts": {

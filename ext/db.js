@@ -2,7 +2,7 @@ import dotenv from 'dotenv'
 import db from 'mongoose';
 dotenv.config()
 
-db.connect(process.env.DB_CONNECT + process.env.DB_NAME,{
+db.connect(process.env.DB_CONNECT ,{
     useNewUrlParser: true,
     useUnifiedTopology: true,
 })

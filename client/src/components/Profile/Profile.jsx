@@ -10,7 +10,7 @@ const Profile = (props) => {
   }
   return (
     <main className={s.user__profile}>
-      <Header fullName={props.profile.fullName} />
+      <Header fullName={props.profile.fullName} status={props.status} updateStatus={props.updateStatus}/>
       <div className={s.content_wrapper}>
         <div className>
           <section className={s.short__inform}>

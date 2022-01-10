@@ -23,7 +23,7 @@ let initialState = {
             },
             {
                 id: 5,
-                avatar: "http://www.weareart.ru/public/uploads/news/967/b-IMG_2128edfef1b9.jpg",
+                avatar: "https://ichef.bbci.co.uk/news/640/cpsprodpb/1352A/production/_103464197_luke-watkin.gif",
                 name: "Thomas Crane"
             },
 

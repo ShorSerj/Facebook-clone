@@ -18,13 +18,17 @@ const schema = new db.Schema({
     },
     followed: {
         type: Boolean,
-        required:true,
+        default: false
     },
-    fullNmae: {
+    fullName: {
         type:String,
         required:true,
         maxlength: 255,
         minlength: 2,
+    },
+    password : {
+        type: String,
+        required: true
     },
     status: {
         type:String,

@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
     const startIndex = (page-1) * limit
     const endIndex = page * limit
 
-    User.find({},(err, data) => {
+    User.find({followed:false},(err, data) => {
             if (err) {
                 return res.status(400).json({ message: 'Error get index user', err})
             }
@@ -27,12 +27,13 @@ router.get('/', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-    const {photoUrl,followed,fullNmae,status,created} = req.body
+    const {photoUrl,followed,fullName,password,status,created} = req.body
     const {country, city} = req.body.location
     let manuf = new User({
         photoUrl: photoUrl,
         followed: followed,
-        fullNmae: fullNmae,
+        fullName: fullName,
+        password: password,
         status: status,
         created: created,
         location: {
@@ -43,7 +44,7 @@ router.post('/', (req, res) => {
     })
     manuf.save( err => {
         if(err) {
-            console.log(req.body.fullNmae)
+            console.log(err)
             return res.status(400).json({ message: 'Error create user', err})
         }
         res.json({message: 'User was created'})

@@ -1,7 +1,7 @@
 import s from './Header.module.css'
 import { NavLink } from 'react-router-dom'
 
-const Header = () => {
+const Header = (props) => {
   return (
     <header className={s.header}>
       <ul className={s.links}>
@@ -85,12 +85,13 @@ const Header = () => {
         </svg>
       </div>
       <div className={s.avatar}>
-        <NavLink to="/profile">
-          <img
-            src="https://storage.yandexcloud.net/printio/assets/realistic_views/round_mouse_pad/detailed/f8d40c9761e7e901d8f9accdbaa376432148d827.jpg?1547712687"
-            alt=""
-          />
-        </NavLink>
+        {props.isAuth ? (
+          <div className="">
+            <NavLink to="/profile">{props.login} </NavLink> - <button onClick={props.logout}>Log Out</button>
+          </div>
+        ) : (
+          <NavLink to="/login">LogIn</NavLink>
+        )}
       </div>
     </header>
   )

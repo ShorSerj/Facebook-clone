@@ -1,4 +1,5 @@
 import React from 'react'
+import { Route, Routes } from "react-router-dom";
 import s from './Friends.module.css'
 
 const Friends = (props) => {
@@ -33,12 +34,12 @@ const Friends = (props) => {
                 <img src={u.photoUrl} alt="" />
               </div>
               <div className={s.text__wrapper}>
-                <span className={s.text}>{u.fullNmae}</span>
+                <span className={s.text}>{u.fullName}</span>
                 <div className={s.buttons}>
                   <button
                     className={s.button_add}
                     onClick={() => {
-                      props.follow(u.id)
+                      props.follow(u._id)
                     }}
                   >
                     Добавить
@@ -47,6 +48,7 @@ const Friends = (props) => {
                     className={s.button_del}
                     onClick={() => {
                       console.log(props.users)
+                      alert(props.isAuth)
                     }}
                   >
                     Удалить
