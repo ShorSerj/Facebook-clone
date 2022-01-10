@@ -1,5 +1,4 @@
 const ADD_MESSAGE = 'ADD-MESSAGE'
-const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT'
 
 let initialState = {
     contactData: [
@@ -58,31 +57,20 @@ let initialState = {
 }
 
 const messengerReducer = (state = initialState, action) => {
-    let addMessage = {
-        id: 2,
-        text: state.messages.newMessageText,
-        time: 'Today, 17:01pm'
-    }
-
     switch (action.type) {
         case('ADD-MESSAGE'): {
+            let addMessage = {
+                id: 2,
+                text: action.newMessageBody,
+                time: 'Today, 17:01pm'
+            }
             return{
                 ...state,
                 messages:
                     {
                         ...state.messages,
                         messageUserData: [...state.messages.messageUserData, addMessage],
-                        newMessageText: ''
                     }
-            }
-        }
-        case('UPDATE-NEW-MESSAGE-TEXT') : {
-            return {
-                ...state,
-                messages:{
-                    ...state.messages,
-                    newMessageText: action.newMessageText
-                }
             }
         }
         default:
@@ -90,7 +78,6 @@ const messengerReducer = (state = initialState, action) => {
     }
 }
 
-export const AddMessageActionCreator = () => ({type: ADD_MESSAGE})
-export const UpdateNewMessageActionCreator = (text) => ({type: UPDATE_NEW_MESSAGE_TEXT, newMessageText: text})
+export const AddMessageActionCreator = (newMessageBody) => ({type: ADD_MESSAGE, newMessageBody})
 
 export default messengerReducer
