@@ -6,7 +6,11 @@ import { getProfile, getStatus, updateStatus} from '../../redux/profile-reducer.
 
 class ProfileConteiner extends React.Component {
   componentDidMount() {
-    let userId  = 21401
+    let userId  = this.props.authorizedUserId
+      if(!userId) {
+        this.props.history.push("/login")
+      }
+    
     this.props.getProfile(userId)
     this.props.getStatus(userId)
   }
@@ -18,6 +22,8 @@ class ProfileConteiner extends React.Component {
 let mapStateToProps = (state) => ({
   profile: state.profilePage.profile,
   status: state.profilePage.status,
+  authorizedUserId: state.auth.userId,
+  isAuth: state.auth.isAuth,
 })
 
 export default connect(mapStateToProps, { getProfile, getStatus, updateStatus })(

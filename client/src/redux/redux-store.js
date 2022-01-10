@@ -6,6 +6,7 @@ import profileReducer from "./profile-reducer";
 import authReducer from "./auth-reducer";
 import thunkMiddlware from 'redux-thunk'
 import {reducer as formReducer} from 'redux-form'
+import appReducer from "./app-reducer";
 
 let reduces = combineReducers({
     messengerPages: messengerReducer,
@@ -13,7 +14,8 @@ let reduces = combineReducers({
     friendsPage: friendsReducer,
     profilePage: profileReducer,
     auth: authReducer,
-    form: formReducer
+    form: formReducer,
+    app: appReducer
 })
 
 let store = createStore(reduces, applyMiddleware(thunkMiddlware))
