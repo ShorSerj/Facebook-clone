@@ -15,6 +15,34 @@ export const usersAPI = {
           )
     },
 
+    followUser (userId) {
+        return axios.post(`http://localhost:3003/api/1.0/follow/` + userId) 
+        .then((response) => {
+          return response.data
+        })
+    },
+}
+
+export const profileAPI = {
+    getProfile (userId) {
+        if (!userId) {
+          userId = '2'
+        }
+        return axios.get(`http://localhost:3003/api/1.0/profile/?userId=` + 2)
+          .then((response) => {
+              
+            return response.data
+          })
+    },
+    getStatus (userId) {
+        return instance.get('/profile/status/' + userId)
+    },
+    updateStatus (status){
+        return instance.put('/profile/status/', {status: status})
+    }
+       
+}
+export const authAPI = {
     getUser(){
         return instance.get(`auth/me`).then(
             response => {
@@ -22,22 +50,4 @@ export const usersAPI = {
             }
         )
     },
-
-    followUser (userId) {
-        return axios.post(`http://localhost:3003/api/1.0/follow/` + userId) 
-        .then((response) => {
-          return response.data
-        })
-    },
-
-    getProfile (userId) {
-        if (!userId) {
-          userId = '2'
-        }
-        return axios.get(`http://localhost:3003/api/1.0/profile/?userId=` + userId)
-          .then((response) => {
-              
-            return response.data
-          })
-    }    
 }
