@@ -65,6 +65,7 @@ export const toogleIsFetching = (isFetching) => ({type: TOOGLE_IS_FETCHING, isFe
 export const getUsers = (currentPage=1, pageSize=4) => {
     return (dispatch) => {
         dispatch(toogleIsFetching(true))
+        dispatch(setCurrentPage(currentPage))
         usersAPI.getUsers(currentPage, pageSize)
           .then((response) => {
             dispatch(toogleIsFetching(false))
