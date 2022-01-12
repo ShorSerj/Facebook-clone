@@ -1,5 +1,5 @@
 import React from 'react'
-import ProfileStatus from './ProfileStatus/ProfileStatus'
+import ProfileStatusWithHooks from './ProfileStatus/ProfileStatusWithHooks'
 import s from './Header.module.css'
 
 const Header = (props) => {
@@ -28,7 +28,7 @@ const Header = (props) => {
               Общие:: <span>1</span>
             </li>
           </ul>
-          <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
+          <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus}/>
         </div>
         <div className={s.friends__mutual__images}></div>
         <div className={s.interactions}>

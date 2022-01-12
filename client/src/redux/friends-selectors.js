@@ -1,7 +1,12 @@
+import { createSelector } from "reselect"
 
-export const getUser = (state) => {
+const getUserSelector = (state) => {
     return state.friendsPage.users
 }
+
+export const getUser = createSelector(getUserSelector, (users) => {
+    return users.filter(u => true)
+})
 
 export const getFollow = (state) => {
     return state.friendsPage.users.follow
