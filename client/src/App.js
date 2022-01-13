@@ -4,7 +4,7 @@ import './App.css';
 import Home from './components/Home/Home.jsx';
 import Authorization from './components/Authorization/Authorization.jsx';
 import Messenger from './components/Messenger/Messenger.jsx';
-import {BrowserRouter, Route, Routes} from 'react-router-dom';
+import {Route, Routes} from 'react-router-dom';
 import store from './redux/redux-store';
 import FriendsContainer from './components/Friends/FriendsContainer';
 import ProfileConteiner from './components/Profile/ProfileContainer';
@@ -45,7 +45,7 @@ class App extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-    initialized:state.app.initialized
+    initialized: state.app.initialized
 })
 export default compose(
     connect(mapStateToProps, {initializeApp}))(App)
