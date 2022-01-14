@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import './reset.css';
 import './App.css';
 import Home from './components/Home/Home.jsx';
 import Authorization from './components/Authorization/Authorization.jsx';
-import Messenger from './components/Messenger/Messenger.jsx';
 import {Route, Routes} from 'react-router-dom';
 import store from './redux/redux-store';
 import FriendsContainer from './components/Friends/FriendsContainer';
@@ -14,6 +13,8 @@ import { compose } from 'redux';
 import { connect } from 'react-redux'
 import {initializeApp } from './redux/app-reducer'
 import Preloader from './components/common/Preloader/Preloader';
+
+const Messenger = React.lazy(() => import('./components/Messenger/Messenger.jsx'));
 
 class App extends React.Component {
     componentDidMount() {
@@ -28,6 +29,7 @@ class App extends React.Component {
         return (
                 <div className='app_wrapper'>
                     <HeaderContainer/>
+                    <Suspense fallback={<div>Загрузка...</div>}>
                     <Routes>
                         <Route path='/' element={<Home/>} />
                         <Route path='/login' element={<Login/>} />
@@ -36,8 +38,9 @@ class App extends React.Component {
                         </Route>
                         <Route path='/friends' element={<FriendsContainer/>} />
                         <Route path='/logIn' element={<Authorization/>}/>
-                        <Route path="/messenger/*" element={<Messenger messengerPages={store.getState().messengerPages}/> }/>
+                        <Route path="/messenger/*" element={<Messenger messengerPages={store.getState().messengerPages}/> }/>      
                     </Routes>
+                    </Suspense>
                 </div>
         );
     }
