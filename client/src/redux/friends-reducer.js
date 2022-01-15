@@ -53,28 +53,21 @@ export const setCurrentPage = (currentPage) => ({type: SET_CURRENT_PAGE, current
 export const setTotalUsersCount = (currentPage) => ({type: SET_TOTAL_USERS_COUNT, count: currentPage})
 export const toogleIsFetching = (isFetching) => ({type: TOOGLE_IS_FETCHING, isFetching})
 
-export const getUsers = (currentPage=1, pageSize=4) => {
-    return (dispatch) => {
+export const getUsers = (currentPage=1, pageSize=4) => async (dispatch) => {
         dispatch(toogleIsFetching(true))
         dispatch(setCurrentPage(currentPage))
-        usersAPI.getUsers(currentPage, pageSize)
-          .then((response) => {
+        let response = await usersAPI.getUsers(currentPage, pageSize)
             dispatch(toogleIsFetching(false))
             dispatch(setUsers(response.data.users))
             dispatch(setTotalUsersCount(response.data.totalCount))
-          })
-    } 
 }
+    
 
-export const follow = (userId) => {
-    return (dispatch) => {
+export const follow = (userId) => async (dispatch) => {
         dispatch(toogleIsFetching(true))
-        usersAPI.followUser(userId)
-          .then((response) => {
+        await usersAPI.followUser(userId)
             dispatch(toogleIsFetching(false))
             dispatch(followSucces(userId))
-          })
-    } 
 }
 // export const unfollow = (userId) => {
 //     return (dispatch) => {
